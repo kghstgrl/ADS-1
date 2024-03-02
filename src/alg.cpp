@@ -6,15 +6,15 @@
 bool checkPrime(uint64_t value) {
     if (value < 2)
         return false;
-    for (uint64_t i = 2; i * i <= value; ++) {
+    for (uint64_t i = 2; i*i <= value; ++i) {
         if (value % i == 0)
             return false;
     }
 }
 
 uint64_t nPrime(uint64_t n) {
-    uint64_t number = 1;
     uint64_t count = 0;
+    uint64_t number = 1;
     while (count < n) {
         number++;
         if (checkPrime(number))
