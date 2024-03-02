@@ -7,13 +7,10 @@
 bool checkPrime(uint64_t value) {
     if (value < 2)
         return false;
-    if (value != 2 && value % 2 == 0)
-        return false;
-    for (uint64_t i = 3; i <= sqrt(value); i = i + 2) {
+    for (uint64_t i = 2; i * i <= value; ++) {
         if (value % i == 0)
             return false;
     }
-    return true;
 }
 
 uint64_t nPrime(uint64_t n) {
